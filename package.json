@@ -1,0 +1,32 @@
+{
+  "name": "s",
+  "version": "0.1.0",
+  "description": "Ny versjon av Straumr, implementert i React",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install && mkdir dist",
+    "reinstall": "npm run clean && rm -rf node_modules && npm install",
+    "clean": "rm -rf dist && mkdir dist",
+    "babel": "browserify ./src/app.js -o ./dist/app.js -t [ babelify --presets [ env, react ] ]",
+    "build": "webpack && cp ./src/html/index.html ./dist/index.html",
+    "start": "cp ./src/html/index.html ./dist/index.html && webpack-dev-server --content-base ./dist"
+  },
+  "author": "Vegar Norman",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^19.0.2",
+    "path": "^0.12.7",
+    "watch": "^1.0.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
