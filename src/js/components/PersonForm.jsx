@@ -18,6 +18,12 @@ export class PersonForm extends React.Component {
   }
 
   handleInputChange (event) {
+    if (!this.refs[event.target.id].validate()) {
+      this.refs[event.target.id].showError('Vennligst fyll ut feltet som beskrevet.')
+    } else {
+      this.refs[event.target.id].hideError()
+    }
+
     let newState = {}
     newState[event.target.id] = event.target.value
     this.setState(newState)
@@ -32,12 +38,11 @@ export class PersonForm extends React.Component {
     return (
       <div className="content-wrapper content-wrapper--xxxl">
         <form onSubmit={this.handleSubmit}>
-          <FormInput id="firstname" labelText="Fornavn" required="true" onChange={this.handleInputChange} />
-          <FormInput id="lastname" labelText="Etternavn" required="true" onChange={this.handleInputChange} />
-          <FormInput id="email" labelText="E-post" required="true" onChange={this.handleInputChange} />
-          <FormInput id="phone" labelText="Telefon" required="false" onChange={this.handleInputChange} />
-          <FormInput id="password" labelText="Passord" required="true" inputType="password" onChange={this.handleInputChange} />
-          <Button buttonType="primary" submit="true" text="Send inn" />
+          <FormInput ref="firstname" id="firstname" labelText="Fornavn" required="true" validationRule={/^[a-zA-Z0-9 ]+$/} onChange={this.handleInputChange} />
+          <FormInput ref="lastname" id="lastname" labelText="Etternavn" required="true" validationRule={/^[a-zA-Z0-9 ]+$/} onChange={this.handleInputChange} />
+          <FormInput ref="email" id="email" labelText="E-post" required="true" onChange={this.handleInputChange} />
+          <FormInput ref="phone" id="phone" labelText="Telefon" required="false" validationRule={/^[0-9]{8}$/}onChange={this.handleInputChange} />
+          <Button ref="submit" buttonType="primary" submit="true" text="Send inn" />
         </form>
       </div>
     )
