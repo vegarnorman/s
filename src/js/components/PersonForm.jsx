@@ -28,6 +28,7 @@ export class PersonForm extends React.Component {
       this.refs[event.target.id].showError()
     } else {
       this.refs[event.target.id].hideError()
+      this.refs.progress.setProgress(this.refs.progress.getProgress() + 1)
     }
 
     let newState = {}
@@ -90,7 +91,7 @@ export class PersonForm extends React.Component {
           />
 
           <InfoBox
-            level="warning"
+            level="info"
             content="NB! Merk at dersom du skal søke permisjon for inntil to dager, skal du kontakte klasseforstander direkte."
           />
 

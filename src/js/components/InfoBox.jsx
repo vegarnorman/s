@@ -30,7 +30,11 @@ export class InfoBox extends React.Component {
 
   render () {
     return (
-      <div className={this.styles[this.state.level]}>{ this.state.content }</div>
+      <div className={this.styles[this.state.level]}>
+        <div className="content-wrapper content-wrapper--xxxxxl">
+          { this.state.content }
+        </div>
+      </div>
     )
   }
 }
