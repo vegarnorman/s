@@ -5,16 +5,27 @@ export class FormInput extends React.Component {
     super(props)
     this.state = {
       error: false,
-      message: 'Vennligst fyll ut dette feltet som beskrevet'
+      help: false,
+      message: this.props.errorMessage || 'Default error message'
     }
+
+    this.toggleHelp = this.toggleHelp.bind(this)
   }
 
   showError (message) {
-    this.setState({message: message, error: true})
+    this.setState({error: true})
   }
 
   hideError () {
     this.setState({error: false})
+  }
+
+  toggleHelp () {
+    this.setState({help: !this.state.help})
+  }
+
+  setValue (value) {
+    this.refs.input.value = value
   }
 
   validate () {
@@ -25,7 +36,7 @@ export class FormInput extends React.Component {
   render () {
     return (
       <div className="form-input">
-        <div className={'form-input__block form-input__block--main' + (this.state.error ? ' form-input__block--main--has-error' : '')}>
+        <div className={'form-input__block form-input__block--main' + (this.state.error ? ' form-input__block--main--has-error' : '') + (!!this.props.infoText ? ' form-input__block--main--has-info' : '')}>
           <label
             ref="label"
             htmlFor={ this.props.id }
@@ -42,6 +53,12 @@ export class FormInput extends React.Component {
               onChange={ this.props.onChange }
             />
           </div>
+        </div>
+
+        <div className="form-input__block__wrapper" style={this.props.infoText ? {display: 'block'} : {display: 'none'}}>
+          <button type="button" className="form-input__block__trigger form-input__message--info__trigger" onClick={ this.toggleHelp }>?</button>
+
+          <div className="form-input__block form-input__message form-input__message--info" style={ this.state.help ? {display: 'block'} : {display: 'none'} }>{ this.props.infoText }</div>
         </div>
 
         <div className="form-input__block__wrapper">
