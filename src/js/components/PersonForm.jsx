@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from './Button.jsx'
 import { FormInput } from './FormInput.jsx'
 import { FormTextarea } from './FormTextarea.jsx'
+import { FormProgress } from './FormProgress.jsx'
 
 export class PersonForm extends React.Component {
   constructor (props) {
@@ -40,6 +41,12 @@ export class PersonForm extends React.Component {
     return (
       <div className="content-wrapper content-wrapper--xxxl">
         <form onSubmit={this.handleSubmit}>
+
+          <FormProgress
+            ref="progress"
+            progress={0}
+          />
+
           <FormInput
             ref="firstname"
             id="firstname"
