@@ -4,6 +4,8 @@ import { FormInput } from './FormInput.jsx'
 import { FormTextarea } from './FormTextarea.jsx'
 import { FormProgress } from './FormProgress.jsx'
 import { Selectable } from './Selectable.jsx'
+import { InfoBox } from './InfoBox.jsx'
+import { FormReference } from './FormReference.jsx'
 
 export class PersonForm extends React.Component {
   constructor (props) {
@@ -87,6 +89,11 @@ export class PersonForm extends React.Component {
             onChange={this.handleInputChange}
           />
 
+          <InfoBox
+            level="warning"
+            content="NB! Merk at dersom du skal søke permisjon for inntil to dager, skal du kontakte klasseforstander direkte."
+          />
+
           <FormTextarea
             ref="reason"
             id="reason"
@@ -98,32 +105,9 @@ export class PersonForm extends React.Component {
             onChange={this.handleInputChange}
           />
 
-          <div className="form-grid__cell form-grid__cell--half">
-            <Selectable
-              selected={false}
-              mainLabel="Max Evercreek"
-              subLabel="Klasse 7-1"
-              value="0230941"
-            />
-          </div>
-
-          <div className="form-grid__cell form-grid__cell--half">
-            <Selectable
-              selected={false}
-              mainLabel="Kevin Gleason"
-              subLabel="Klasse 7-1"
-              value="0230942"
-            />
-          </div>
-
-          <div className="form-grid__cell form-grid__cell--half">
-            <Selectable
-              selected={true}
-              mainLabel="Tanner Cleary"
-              subLabel="Klasse 6-2"
-              value="0230943"
-            />
-          </div>
+          <FormReference
+            refCode="YXKLWN"
+          />
 
           <Button
             ref="submit"
