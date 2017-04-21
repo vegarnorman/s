@@ -3,6 +3,7 @@ import { Button } from './Button.jsx'
 import { FormInput } from './FormInput.jsx'
 import { FormTextarea } from './FormTextarea.jsx'
 import { FormProgress } from './FormProgress.jsx'
+import { Selectable } from './Selectable.jsx'
 
 export class PersonForm extends React.Component {
   constructor (props) {
@@ -96,6 +97,33 @@ export class PersonForm extends React.Component {
             infoText="Du må fylle ut en begrunnelse i henhold til regelverket for permisjon utenfor skoletid."
             onChange={this.handleInputChange}
           />
+
+          <div className="form-grid__cell form-grid__cell--half">
+            <Selectable
+              selected={false}
+              mainLabel="Max Evercreek"
+              subLabel="Klasse 7-1"
+              value="0230941"
+            />
+          </div>
+
+          <div className="form-grid__cell form-grid__cell--half">
+            <Selectable
+              selected={false}
+              mainLabel="Kevin Gleason"
+              subLabel="Klasse 7-1"
+              value="0230942"
+            />
+          </div>
+
+          <div className="form-grid__cell form-grid__cell--half">
+            <Selectable
+              selected={true}
+              mainLabel="Tanner Cleary"
+              subLabel="Klasse 6-2"
+              value="0230943"
+            />
+          </div>
 
           <Button
             ref="submit"
