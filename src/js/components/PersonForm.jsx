@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './Button.jsx'
 import { FormInput } from './FormInput.jsx'
+import { FormTextarea } from './FormTextarea.jsx'
 
 export class PersonForm extends React.Component {
   constructor (props) {
@@ -10,7 +11,8 @@ export class PersonForm extends React.Component {
       firstname: '',
       lastname: '',
       email: '',
-      phone: ''
+      phone: '',
+      reason: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -74,6 +76,17 @@ export class PersonForm extends React.Component {
             required="false"
             validationRule={/^[0-9]{8}$/}
             errorMessage="Vennligst fyll ut åttesifret telefonnummer."
+            onChange={this.handleInputChange}
+          />
+
+          <FormTextarea
+            ref="reason"
+            id="reason"
+            labelText="Begrunnelse"
+            required="true"
+            validationRule={/^[a-zA-ZæøåÆØÅ0-9 ]+$/}
+            errorMessage="Vennligst fyll ut begrunnelse."
+            infoText="Du må fylle ut en begrunnelse i henhold til regelverket for permisjon utenfor skoletid."
             onChange={this.handleInputChange}
           />
 
