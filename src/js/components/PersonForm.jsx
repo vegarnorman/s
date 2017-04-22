@@ -6,6 +6,7 @@ import { FormProgress } from './FormProgress.jsx'
 import { Selectable } from './Selectable.jsx'
 import { InfoBox } from './InfoBox.jsx'
 import { FormReference } from './FormReference.jsx'
+import { FormSection } from './FormSection.jsx'
 
 export class PersonForm extends React.Component {
   constructor (props) {
@@ -51,26 +52,33 @@ export class PersonForm extends React.Component {
             progress={0}
           />
 
-          <FormInput
-            ref="firstname"
-            id="firstname"
-            labelText="Fornavn"
-            required="true"
-            validationRule={/^[a-zA-Z0-9 ]+$/}
-            errorMessage="Vennligst fyll ut gyldig fornavn."
-            infoText="Gyldig fornavn består av bokstaver og tall."
-            onChange={this.handleInputChange}
-          />
+          <FormSection
+            name="Personalia"
+            description="Fortell oss litt om deg selv"
+          >
 
-          <FormInput
-            ref="lastname"
-            id="lastname"
-            labelText="Etternavn"
-            required="true"
-            validationRule={/^[a-zA-Z0-9 ]+$/}
-            errorMessage="Vennligst fyll ut gyldig etternavn."
-            onChange={this.handleInputChange}
-          />
+            <FormInput
+              ref="firstname"
+              id="firstname"
+              labelText="Fornavn"
+              required="true"
+              validationRule={/^[a-zA-Z0-9 ]+$/}
+              errorMessage="Vennligst fyll ut gyldig fornavn."
+              infoText="Gyldig fornavn består av bokstaver og tall."
+              onChange={this.handleInputChange}
+            />
+
+            <FormInput
+              ref="lastname"
+              id="lastname"
+              labelText="Etternavn"
+              required="true"
+              validationRule={/^[a-zA-Z0-9 ]+$/}
+              errorMessage="Vennligst fyll ut gyldig etternavn."
+              onChange={this.handleInputChange}
+            />
+
+          </FormSection>
 
           <FormInput
             ref="email"
