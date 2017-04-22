@@ -1,6 +1,7 @@
 {
   "name": "s",
   "version": "0.1.0",
+  "repository": "https://github.com/vegarnorman/s",
   "description": "Ny versjon av Straumr, implementert i React",
   "main": "index.js",
   "scripts": {
