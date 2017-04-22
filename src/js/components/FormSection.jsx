@@ -31,7 +31,8 @@ export class FormSection extends React.Component {
     this.setState({active: status})
   }
 
-  handleClick () {
+  handleClick (event) {
+    event.preventDefault()
     this.setState({active: !this.state.active})
   }
 
