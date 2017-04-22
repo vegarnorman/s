@@ -23,7 +23,7 @@ export class Link extends React.Component {
 
   render () {
     return (
-      <a href={ this.props.url } className={ this.styles[this.props.linkStyle] }><span className="link__text">{ this.props.text }</span></a>
+      <a href={ this.props.url } className={ this.styles[this.props.linkStyle] }><span className="link__text">{ this.props.children }</span></a>
     )
   }
 }
