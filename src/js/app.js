@@ -3,6 +3,8 @@ import DOM from 'react-dom'
 
 import { PersonForm } from './components/PersonForm.jsx'
 import { GenericMap } from './components/GenericMap.jsx'
+import { GlobalSearch } from './components/GlobalSearch.jsx'
 
-DOM.render(<PersonForm />, document.getElementById('app'))
 //DOM.render(<GenericMap position={[59.955, 11.04]} zoom={14}/>, document.getElementById('app'))
+//DOM.render(<GlobalSearch url="https://www.skedsmo.kommune.no/api/search/suggestions" items={5} placeholder="Hva skjer'a Bagheera?" />, document.getElementById('app'))
+DOM.render(<PersonForm />, document.getElementById('app'))
