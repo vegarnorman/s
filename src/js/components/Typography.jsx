@@ -84,4 +84,16 @@ class FooterText extends React.Component {
   }
 }
 
-export { H1, H2, H3, H4, Paragraph, Lead, FooterText }
+class MetaData extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+
+  render () {
+    return {
+      <p className="metadata">{ this.props.children }</p>
+    }
+  }
+}
+
+export { H1, H2, H3, H4, Paragraph, Lead, FooterText, MetaData }
