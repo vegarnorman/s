@@ -55,6 +55,7 @@ export class PersonForm extends React.Component {
           <FormSection
             name="Personalia"
             description="Fortell oss litt om deg selv"
+            complete={true}
           >
 
             <FormInput

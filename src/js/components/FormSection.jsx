@@ -20,7 +20,7 @@ export class FormSection extends React.Component {
   getStyle () {
     return 'form-section-header form-section-header--clickable' +
       (this.state.complete ? ' form-section-header--complete' :  ' form-section-header--incomplete') +
-      (this.state.active ? ' form-section-header--active' : 'form-section-header--inactive')
+      (this.state.active ? ' form-section-header--active' : ' form-section-header--inactive')
   }
 
   setComplete (status) {
