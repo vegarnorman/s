@@ -2,7 +2,7 @@
 
 ## The heck is this?
 
-S er en [https://facebook.github.io/react/](React)-implementasjon av [https://straumr.skedsmo.kommune.no](Straumr). Komponenter implementeres fortløpende og ved behov/ønske.
+S er en [React](https://facebook.github.io/react/)-implementasjon av [Straumr](https://straumr.skedsmo.kommune.no). Komponenter implementeres fortløpende og ved behov/ønske.
 
 ## Hva er S til?
 
